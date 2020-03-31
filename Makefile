@@ -7,5 +7,11 @@ all:
 helloworld:
 	gcc -o helloworld helloworld.c
 
+options: options.c
+	gcc -o options options.c
+
+thread: thread.c
+	gcc -o thread thread.c -lpthread
+
 clean:
-	rm -f helloworld
+	rm -f helloworld options
