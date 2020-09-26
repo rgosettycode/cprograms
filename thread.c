@@ -11,7 +11,7 @@ int main()
 	pthread_t tid;
 
 	pthread_create(&tid, NULL, &show, NULL);
-	printf("main thread\n");
+	printf("main program\n");
 	pthread_join(tid, NULL);
 	return 0;
 }

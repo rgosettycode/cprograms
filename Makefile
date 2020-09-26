@@ -13,5 +13,12 @@ options: options.c
 thread: thread.c
 	gcc -o thread thread.c -lpthread
 
+fork: fork.c
+	gcc -o fork fork.c
+
+shm: shmrd.c shmwr.c
+	gcc -o shmrd shmrd.c
+	gcc -o shmwr shmwr.c
+
 clean:
-	rm -f helloworld options
+	rm -f helloworld options thread fork shmrd shmwr btree
