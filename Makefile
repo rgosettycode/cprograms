@@ -13,6 +13,12 @@ options: options.c
 thread: thread.c
 	gcc -o thread thread.c -lpthread
 
+mutex: mutex.c
+	gcc -o mutex mutex.c -lpthread
+
+cond: cond_wait_signal.c
+	gcc -o cond cond_wait_signal.c -lpthread
+
 fork: fork.c
 	gcc -o fork fork.c
 
@@ -21,4 +27,4 @@ shm: shmrd.c shmwr.c
 	gcc -o shmwr shmwr.c
 
 clean:
-	rm -f helloworld options thread fork shmrd shmwr btree
+	rm -f a.out helloworld options thread mutex cond fork shmrd shmwr btree
