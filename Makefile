@@ -26,5 +26,8 @@ shm: shmrd.c shmwr.c
 	gcc -o shmrd shmrd.c
 	gcc -o shmwr shmwr.c
 
+bst: bst.c
+	gcc -o bst bst.c
+
 clean:
 	rm -f a.out helloworld options thread mutex cond fork shmrd shmwr btree
