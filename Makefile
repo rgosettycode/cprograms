@@ -29,5 +29,11 @@ shm: shmrd.c shmwr.c
 bst: bst.c
 	gcc -o bst bst.c
 
+quick: quick_sort.c
+	gcc -o quick quick_sort.c
+
+merge: merge_sort.c
+	gcc -o merge quick_sort.c
+
 clean:
-	rm -f a.out helloworld options thread mutex cond fork shmrd shmwr btree
+	rm -f a.out helloworld options thread mutex cond fork shmrd shmwr bst quick merge
