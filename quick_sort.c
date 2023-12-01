@@ -1,32 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void quick_sort(unsigned int *arr, int lower, int upper)
-{
-	int begin, end; // index position
-	unsigned int pivot, temp;
+void quick_sort (int *arr, int l, int h) {
+	int pivot, i, j, temp;
 
-	if (lower < upper) {
-		pivot = arr[lower];
-		begin = lower;
-		end = upper;
-		while(begin < end) {
-			while(pivot >= arr[begin] && begin <= upper) {
-				begin++;
-			}
-			while(pivot < arr[end] && end >= lower) {
-				end--;
-			}
-			if (begin < end) {
-				temp = arr[begin];
-				arr[begin] = arr[end];
-				arr[end] = temp;
+	if (l < h) {
+		pivot = arr[l]; // pivot swap
+		i = l; j = h;
+		while(i < j) {
+			while(pivot >= arr[i]) i++;
+			while(pivot < arr[j]) j--;
+			if (i < j) {
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
 			}
 		}
-		arr[lower] = arr[end];
-		arr[end] = pivot;
-		quick_sort(arr, lower, end - 1);
-		quick_sort(arr, end + 1, upper);
+		arr[l] = arr[j]; // pivot swap
+		arr[j] = pivot;  // pivot swap
+		quick_sort(arr, l, j - 1);
+		quick_sort(arr, j + 1, h);
 	}
 }
 
